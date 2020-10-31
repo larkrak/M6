@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/control/frameIndex.js"></script>
+</head>
+<body>
+
+    <div id="container-form">
+        <h2 id="container-title">Select product <span id="resultSelect"></span></h2>
+        <p>Introduce the product</p>
+        <select id="optionSelect">
+            <option value="1">Select one:</option>
+            <option value="2">DNA Code</option>
+            <option value="3">Protein Code</option>
+        </select>
+        <p>Introduce the number of products</p>
+        <input type="text" id="productsNumber" placeholder="e.g: 1">
+        <input class="enviar" type="button" value="Submit" onclick="submited()">
+    </div>
+
+    <div id="container-form" class="submited">
+        <h2 id="container-title">Enter product for category -> <span id="resultSelectP"></span> <- </h2>
+
+        <table id="contentTable">
+            <tr>
+                <th>Product name</th>
+                <th>Code</th>
+                <th>Tested</th>
+            </tr>
+            <!-- <tr class="bordered">
+                <td><input type="text" placeholder="Specie here"></td>
+                <td><input type="text" placeholder="DNA Code"></td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr class="bordered">
+                <td><input type="text" placeholder="Specie here"></td>
+                <td><input type="text" placeholder="DNA Code"></td>
+                <td><input type="checkbox"></td>
+            </tr>  -->
+        </table>
+        <div id="confirmButtons">
+            <input type="button" value="Add to the data base" onclick="popUpWindow()">
+            <input type="button" value="Cancel" id="back" onclick="goBack()">
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+html{
+    height: 100%;
+}
+body,*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+
+#contentTable {
+    width: 70%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+#contentTable th{
+    text-align: left;
+    padding-left:10px;
+    padding-top: 10px;
+}
+#contentTable th:nth-child(1), #contentTable th:nth-child(2), .bordered td:nth-child(1),.bordered td:nth-child(2){
+    width: 30%;
+    background-color: lightgray;
+}
+
+#contentTable th:nth-child(3), .bordered td:nth-child(3){
+    width: 10%;
+}
+
+.bordered td{
+    border-top: 2px solid white;
+    padding-top: 10px;
+    padding-left: 10px;
+}
