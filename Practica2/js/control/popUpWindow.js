@@ -34,8 +34,13 @@ function loadData(){
 
     lenR = table.rows.length
 
-    for (let index = 0; index < lenR; index++) {
-        const element = array[index];
+    
+    for (let index = 1; index < lenR; index++) {
+        for (var c = 0, m = table.rows[index].cells.length; c < m; c++) {
+            input = table.rows[index].cells[c];
+
+            console.log(input.children)
+        }
         
     }
 

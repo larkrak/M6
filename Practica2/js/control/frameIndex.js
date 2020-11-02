@@ -99,7 +99,7 @@ function popUpWindow(){
         var decision = confirm("Do you really want to introduce the data?");
 
         if (decision){
-            window.open("../popUpWindows/dataSummary.html", "_blank", "width=900px, height=600px");
+            window.open("../popUpWindows/dataSummary.html", "_blank", "width=800px, height=300px");
         }
     }
 

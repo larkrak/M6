@@ -32,8 +32,7 @@ body{
 .container{
     background-color: #C0C0C0;
     margin: auto;
-    height: 400px;
-    width: 50%;
+    width: 30%;
     border-radius: 3px;
 }
 
@@ -65,13 +64,13 @@ input[type="checkbox"]{
 }
 
 #container-title{
-    background-color: white;
     border-radius: 3px;
     padding: 10px 0px 10px 15px;
-    color: #C0C0C0;
+    color: white;
     font-weight: bold;
     width: 100%;
     margin-bottom: 5px;
+    background-color: rgb(70, 70, 70);
 }
 
 #container-form select, #container-form input{
@@ -81,6 +80,8 @@ input[type="checkbox"]{
   border-radius: 3px;
   height: 45px;
   font-size: 15px;
+  background-color: rgb(70, 70, 70);
+  color: white;
 }
 
 #container-form select:focus, #container-form input:focus{
