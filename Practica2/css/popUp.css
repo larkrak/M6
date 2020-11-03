@@ -11,6 +11,7 @@ body{
     flex-direction: column;
     justify-content: space-around;
     height: 100%;
+    font-family: 'Roboto', sans-serif;
 }
 
 #buttons{
@@ -45,50 +46,82 @@ body{
     width: 70%;
     margin: auto;
     border-collapse: collapse;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
 }
 h1{
     width: 70%;
     margin: auto;
 }
 
+#tableSummary td{
+    padding-left: 10px;
+}
+
+#tableSummary tr:nth-child(1n+3){
+    background-color:#dbdbdb;
+}
+
 #tableSummary th{
     text-align: left;
-    padding-left:10px;
-    padding-top: 10px;
 }
 #tableSummary th:nth-child(1), #tableSummary th:nth-child(2){
     width: 33%;
     padding: 10px;
-    background-color: lightgray;
+    background-color: #757575;
 }
 
 #tableSummary th:nth-child(3){
     width: 33%;
-    background-color: lightgray;
+    background-color: #757575;
+}
+
+#tableSummary td:nth-last-child(){
+    background-color: blue;
 }
 
 .red{
-    background-color: red;
+    color: red;
 }
 
 .green{
-    background-color: green;
+    color: green;
 }
 
 .bordered td{
-    border-top: 2px solid white;
+    border-top: 3px solid white;
     padding-top: 10px;
-    padding-left: 10px;
+    padding-bottom: 10px;
 }
 
 #close{
     background-color: rgb(167, 42, 42);
+    color: white;
     padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    font-size: 15px;
+}
+
+#close:hover{
+    background-color: rgba(167, 42, 42, 0.904);
+    cursor: pointer;
 }
 
 #print{
     background-color: #0088A9;
+    color: white;
     padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    font-size: 15px;
+}
+
+#print:hover{
+    background-color: #0087a9d8;
+    cursor: pointer;
 }
 
 #buttons tr:nth-child(2) td:nth-child(2){

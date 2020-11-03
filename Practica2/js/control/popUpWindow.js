@@ -12,13 +12,8 @@ function loadData(){
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     document.getElementById("time").innerHTML = days[d.getDay()] + ", " +d.getDate() + " of " + months[d.getMonth()] + " of " + d.getFullYear();
 
-    console.log(table)
-    arrVals = []
-
     for (let index = 3; index < (table.rows.length)+2; index++) {
         
-        console.log(table.rows.length)
-
         newRow = document.getElementById("tableSummary").insertRow()
         newRow.classList.add("bordered")
         newRow.insertCell(0)
@@ -31,14 +26,23 @@ function loadData(){
             if(contentForEachTD.type == 'text'){
                 tableSummary.rows[index].cells[c].innerText = contentForEachTD.value;
             }else{
+                if(contentForEachTD.checked == false){
+                    tableSummary.rows[index].cells[c].classList.add("red")
+                }else{
+                    tableSummary.rows[index].cells[c].classList.add("green")
+                }
                 tableSummary.rows[index].cells[c].innerText = contentForEachTD.checked;
             }   
         }
     }
+}
 
-    console.log(tableSummary)
+function closePop(){
+    var daddy = window.self;
+    daddy.opener = window.self;
+    daddy.close();
+}
 
-
-    console.log(arrVals)
-
+function printPop(){
+    window.print();
 }
