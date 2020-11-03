@@ -10,23 +10,34 @@
 </head>
 <body onload="loadData()">
 
+    <div>
     <table id="tableSummary">
+        <tr>
+            <td colspan="2" id="dataTitle">Data introduced for product: <span id="data"></span></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="dataTime">Time: <span id="time"></span></td>
+            <td></td>
+            <td></td>
+        </tr>
         <tr>
             <th>Product name</th>
             <th>Code</th>
             <th>Tested</th>
         </tr>
-         <!-- <tr class="bordered">
-            <td>Tewxto de ejemplo</td>
-            <td>Tewxto de ejemplo</td>
-            <td>NO</td>
-        </tr>
-        <tr class="bordered">
-            <td>Tewxto de ejemplo</td>
-            <td>Tewxto de ejemplo</td>
-            <td>NO</td>
-        </tr> -->
     </table>
 
+    <table id="buttons">
+        <tr>
+            <th id="total">Total products introduced in the data base: <span id="spanTotal"></span></th>
+        </tr>
+        <tr>
+            <td><input id="close" type="button" value="Close Window"></td>
+            <td><input id="print" type="button" value="Print window"></td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>

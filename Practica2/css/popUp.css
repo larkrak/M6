@@ -8,15 +8,47 @@ body,*{
 
 body{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     height: 100%;
 }
 
+#buttons{
+    width: 70%;
+    margin: auto;
+    text-align: left;
+    padding: 10px;
+    border-collapse: collapse;
+}
+
+#total{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#buttons td{
+    width: 50%;
+}
+
+#dataTitle{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 22px;
+}
+
+#dataTime{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
 
 #tableSummary {
     width: 70%;
     margin: auto;
     border-collapse: collapse;
+}
+h1{
+    width: 70%;
+    margin: auto;
 }
 
 #tableSummary th{
@@ -24,21 +56,41 @@ body{
     padding-left:10px;
     padding-top: 10px;
 }
-#tableSummary th:nth-child(1), #tableSummary th:nth-child(2), #tableSummary th:nth-child(3), .bordered td:nth-child(1),.bordered td:nth-child(2){
-    width: 30%;
+#tableSummary th:nth-child(1), #tableSummary th:nth-child(2){
+    width: 33%;
+    padding: 10px;
     background-color: lightgray;
 }
 
-#tableSummary th:nth-child(3), .bordered td:nth-child(3){
-    width: 10%;
+#tableSummary th:nth-child(3){
+    width: 33%;
+    background-color: lightgray;
 }
 
-#tableSummary td{
-    border: 1px solid black;
+.red{
+    background-color: red;
+}
+
+.green{
+    background-color: green;
 }
 
 .bordered td{
     border-top: 2px solid white;
     padding-top: 10px;
     padding-left: 10px;
+}
+
+#close{
+    background-color: rgb(167, 42, 42);
+    padding: 10px;
+}
+
+#print{
+    background-color: #0088A9;
+    padding: 10px;
+}
+
+#buttons tr:nth-child(2) td:nth-child(2){
+    text-align: right;
 }
