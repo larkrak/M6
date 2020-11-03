@@ -13,24 +13,28 @@ body{
 }
 
 
-#contentTable {
+#tableSummary {
     width: 70%;
     margin: auto;
     border-collapse: collapse;
 }
 
-#contentTable th{
+#tableSummary th{
     text-align: left;
     padding-left:10px;
     padding-top: 10px;
 }
-#contentTable th:nth-child(1), #contentTable th:nth-child(2), .bordered td:nth-child(1),.bordered td:nth-child(2){
+#tableSummary th:nth-child(1), #tableSummary th:nth-child(2), #tableSummary th:nth-child(3), .bordered td:nth-child(1),.bordered td:nth-child(2){
     width: 30%;
     background-color: lightgray;
 }
 
-#contentTable th:nth-child(3), .bordered td:nth-child(3){
+#tableSummary th:nth-child(3), .bordered td:nth-child(3){
     width: 10%;
+}
+
+#tableSummary td{
+    border: 1px solid black;
 }
 
 .bordered td{
