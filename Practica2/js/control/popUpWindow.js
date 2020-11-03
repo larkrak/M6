@@ -1,4 +1,10 @@
 
+/**
+ * Get the data from the opener and present it into a table
+ * @param Gets no param, it's a onLoad on body function
+ * 
+ */
+
 function loadData(){
 
     frame = window.opener.document;
@@ -37,12 +43,23 @@ function loadData(){
     }
 }
 
+/**
+ * Used to close the popUp window that was open
+ * @param {} Gets no param, it's a onClick function
+ * 
+ */
+
 function closePop(){
     var daddy = window.self;
     daddy.opener = window.self;
     daddy.close();
 }
 
+/**
+ * Used to print the popUp window that was open
+ * @param {} Gets no param, it's a onClick function
+ * 
+ */
 function printPop(){
     window.print();
 }

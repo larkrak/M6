@@ -1,3 +1,9 @@
+/**
+ * Used to hide the second div on the iframe
+ * @param Gets no param, it's a onLoad function
+ * 
+ */
+
 window.onload = function () {
 
     divSubmited = document.getElementsByClassName("submited");
@@ -5,6 +11,12 @@ window.onload = function () {
     divSubmited.style.display = "none";
 
 }
+
+/**
+ * Get the data in the first form and try to validate it to be able to show the second div
+ * @param Gets no param, it's a onClick function
+ * 
+ */
 
 function submited() {
     document.getElementById("container-form").style.display = "none";
@@ -52,12 +64,22 @@ function submited() {
         goBack();
     }
 }
-
+/**
+ * Used to reload the page to go back
+ * @param Gets no param, it's a onLoad on body function
+ * 
+ */
 function goBack(){
 
     location.reload();
 
 }
+
+/**
+ * Used to the second validation. In orden to validate the DNA sequence.
+ * @param Gets no param, it's a onClick function
+ * 
+ */
 
 function popUpWindow(){
 
