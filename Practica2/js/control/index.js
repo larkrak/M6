@@ -6,11 +6,23 @@ window.onload = function () {
 
 }
 
+/**
+ * Used to reload the page to go back
+ * @param Gets no param, it's a onLoad on body function
+ * 
+ */
 function goBack(){
 
     location.reload();
 
 }
+
+
+/**
+ * Used to the second validation. In orden to validate the DNA sequence.
+ * @param Gets no param, it's a onClick function
+ * 
+ */
 
 function popUpWindow(){
 
@@ -48,8 +60,10 @@ function popUpWindow(){
     if(flag == true){
         var decision = confirm("Do you really want to introduce the data?");
 
+        //No se porque, pero me estaba dando problemas la ruta relativa y he tenido que poner la absoluta. 
+
         if (decision){
-            window.open("http://localhost/M6_buckup/Practica2/popUpWindows/dataSummary.html", "_blank", "width=800px, height=300px");
+            window.open("http://localhost/M6/Practica2/popUpWindows/dataSummary.html", "_blank", "width=800px, height=300px");
         }
     }
 

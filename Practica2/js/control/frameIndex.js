@@ -52,8 +52,6 @@ function submited() {
             cell3.innerHTML = '<td><input type="checkbox"></td>';
         }
 
-
-
         $("input:checkbox", window.parent.document).each(function () {
 
             random = Math.floor((Math.random() * 10) + 1);
@@ -68,65 +66,9 @@ function submited() {
         goBack();
     }
 }
-/**
- * Used to reload the page to go back
- * @param Gets no param, it's a onLoad on body function
- * 
- */
-function goBack(){
-
-    location.reload();
-
-}
-
-/**
- * Used to the second validation. In orden to validate the DNA sequence.
- * @param Gets no param, it's a onClick function
- * 
- */
-
-function popUpWindow(){
-
-    table = document.getElementById("contentTable");
-
-    len = table.rows.length
-    flag = true;
-    
-    for (let index = 0; index < (len - 1); index++) {
-        ids= "specie"+index
-        code = "code"+index
-
-        inpS = document.getElementById(ids).value
-        codeP = document.getElementById(code).value
 
 
-        if((inpS == "") || !isNaN(inpS) || flag == false || codeP === "" ){
-            alert("Found invalid values")
-            flag = false
-            break;
-        }
-        
 
-        for (let index = 0; index < codeP.length; index++) {
 
-            if(codeP[index] == 'c' || codeP[index] == 'a' || codeP[index] == 'u' || codeP[index] == 't'){
-                flag = true;
-            }else{
-                flag = false;
-                break;
-            }
-        }
-    }
-
-    if(flag == true){
-        var decision = confirm("Do you really want to introduce the data?");
-
-        if (decision){
-            window.open("../popUpWindows/dataSummary.html", "_blank", "width=800px, height=300px");
-        }
-    }
-
-    
-}
 
 
