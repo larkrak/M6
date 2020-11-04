@@ -32,13 +32,14 @@ body{
 .container{
     background-color: #C0C0C0;
     margin: auto;
-    width: 50%;
+    width: 600px;
     border-radius: 3px;
 }
 
 input:not([type="checkbox"]):focus, select:focus{
   outline: 1px solid black !important;
 }
+
 
 input[type="checkbox"]{
   outline: none !important;

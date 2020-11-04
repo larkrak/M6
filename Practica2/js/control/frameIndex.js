@@ -92,11 +92,16 @@ function popUpWindow(){
         ids= "specie"+index
         code = "code"+index
 
-
         inpS = document.getElementById(ids).value
         codeP = document.getElementById(code).value
 
-        console.log(codeP)
+
+        if((inpS == "") || !isNaN(inpS) || flag == false || codeP === "" ){
+            alert("Found invalid values")
+            flag = false
+            break;
+        }
+        
 
         for (let index = 0; index < codeP.length; index++) {
 
@@ -107,14 +112,6 @@ function popUpWindow(){
                 break;
             }
         }
-
-        console.log(flag)
-
-        if((inpS == "") || !isNaN(inpS) || flag == false ){
-            alert("Found invalid values")
-            break;
-        }
-        
     }
 
     if(flag == true){
