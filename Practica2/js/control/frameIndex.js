@@ -4,14 +4,6 @@
  * 
  */
 
-window.onload = function () {
-
-    // divSubmited = document.getElementsByClassName("submited");
-    // divSubmited = divSubmited[0];
-    // divSubmited.style.display = "none";
-
-}
-
 /**
  * Get the data in the first form and try to validate it to be able to show the second div
  * @param Gets no param, it's a onClick function
@@ -23,7 +15,8 @@ function submited() {
     window.parent.document.getElementsByClassName("container")[0].style.display = "none";
     productN = document.getElementById("productsNumber").value;
     window.parent.document.getElementsByClassName("submited")[0].style.display = "flex";
-    $(".submited").css({ opacity: 0.0, visibility: "visible" }).animate({ opacity: 1.0 })
+
+    $(".submited", window.parent.document).css({ opacity: 0.0, visibility: "visible" }).animate({ opacity: 1.0 })
 
     select = document.getElementById("optionSelect");
     table = window.parent.document.getElementById("contentTable");
