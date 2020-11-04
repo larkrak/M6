@@ -6,9 +6,9 @@
 
 window.onload = function () {
 
-    divSubmited = document.getElementsByClassName("submited");
-    divSubmited = divSubmited[0];
-    divSubmited.style.display = "none";
+    // divSubmited = document.getElementsByClassName("submited");
+    // divSubmited = divSubmited[0];
+    // divSubmited.style.display = "none";
 
 }
 
@@ -19,14 +19,14 @@ window.onload = function () {
  */
 
 function submited() {
-    document.getElementById("container-form").style.display = "none";
+
+    window.parent.document.getElementsByClassName("container")[0].style.display = "none";
     productN = document.getElementById("productsNumber").value;
-    divSubmited.style.display = "flex";
+    window.parent.document.getElementsByClassName("submited")[0].style.display = "flex";
     $(".submited").css({ opacity: 0.0, visibility: "visible" }).animate({ opacity: 1.0 })
 
     select = document.getElementById("optionSelect");
-    table = document.getElementById("contentTable");
-
+    table = window.parent.document.getElementById("contentTable");
 
     if (select.value != 1 && !isNaN(productN) || productN == "") {
 
@@ -35,11 +35,12 @@ function submited() {
         }
 
         selectText = select.options[select.selectedIndex].text;
-        document.getElementById("resultSelectP").textContent = selectText;
+        window.parent.document.getElementById("resultSelectP").textContent = selectText;
 
         tableLenght = table.rows.lenght;
 
         for (let index = 0; index < productN; index++) {
+            
             tableLenght = table.rows.lenght;
             newRow = table.insertRow(tableLenght);
             newRow.className = "bordered";
@@ -50,7 +51,10 @@ function submited() {
             cell2.innerHTML = '<td><input type="text" id="code'+index+'" placeholder="'+selectText+'"></td>';
             cell3.innerHTML = '<td><input type="checkbox"></td>';
         }
-        $("input:checkbox").each(function () {
+
+
+
+        $("input:checkbox", window.parent.document).each(function () {
 
             random = Math.floor((Math.random() * 10) + 1);
 

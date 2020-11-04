@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="./js/control/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/index.css">
+    
     <title>Practica2</title>
 </head>
 <body>
@@ -14,6 +16,22 @@
 
     <div class="bg-image"></div>
     <iframe class="container" src="./iframes/frameIndex.html" frameborder="0" height="400px"></iframe>
+
+    <div id="container-form" class="submited">
+        <h2 id="container-title">Enter product for category -> <span id="resultSelectP"></span> <- </h2>
+
+        <table id="contentTable">
+            <tr>
+                <th>Product name</th>
+                <th>Code</th>
+                <th>Tested</th>
+            </tr>
+        </table>
+        <div id="confirmButtons">
+            <input type="button" value="Add to the data base" onclick="popUpWindow()">
+            <input type="button" value="Cancel" id="back" onclick="goBack()">
+        </div>
+    </div>
 
 </body>
 </html>

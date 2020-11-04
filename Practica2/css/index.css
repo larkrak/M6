@@ -48,11 +48,15 @@ input[type="checkbox"]{
 #container-form{
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 600px;
   flex-flow: column wrap; 
   align-content: flex-start; 
   background-color: lightgrey;
   
+}
+
+.submited{
+  width: 600px !important;
 }
 
 #container-form p{
