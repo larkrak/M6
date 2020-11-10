@@ -1,7 +1,10 @@
 
 /**
- * Get the data from the opener and present it into a table
- * @param Gets no param, it's a onLoad on body function
+* @author Ismael Collado
+* @version 2020/nov
+* @date 2020/11/10
+* @listens body.onLoad
+* @param none
  * 
  */
 
@@ -44,8 +47,11 @@ function loadData(){
 }
 
 /**
- * Used to close the popUp window that was open
- * @param {} Gets no param, it's a onClick function
+* @author Ismael Collado
+* @version 2020/nov
+* @date 2020/11/10
+* @listens button.onClick
+* @param none
  * 
  */
 
@@ -56,8 +62,11 @@ function closePop(){
 }
 
 /**
- * Used to print the popUp window that was open
- * @param {} Gets no param, it's a onClick function
+* @author Ismael Collado
+* @version 2020/nov
+* @date 2020/11/10
+* @listens button.onClick
+* @param none
  * 
  */
 function printPop(){

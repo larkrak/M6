@@ -1,12 +1,10 @@
 /**
- * Used to hide the second div on the iframe
- * @param Gets no param, it's a onLoad function
- * 
- */
-
-/**
- * Get the data in the first form and try to validate it to be able to show the second div
- * @param Gets no param, it's a onClick function
+* @author Ismael Collado
+* @see goBack()
+* @version 2020/nov
+* @date 2020/11/10
+* @listens button.onClick
+* @param none
  * 
  */
 
