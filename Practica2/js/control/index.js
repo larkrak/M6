@@ -86,3 +86,14 @@ function popUpWindow(){
 
     
 }
+$(document).ready(function(){
+
+    $("#img img").mouseenter(function(){
+        $(this).animate({ height: "240px" })
+    })
+    $("#img img").mouseout(function(){
+        $(this).animate({ height: "200px" })
+    })
+
+    
+});
