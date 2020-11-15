@@ -1,0 +1,67 @@
+html{
+    height: 100%;
+}
+
+body,*{
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#img img{
+  position: absolute;
+  top: 150px;
+  left: 100px;
+  height: 200px;
+  margin:-60px 0 0 -60px;
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 5s linear infinite, come linear 2s;
+  
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+@keyframes come { 
+
+  10%{
+    left: -200px;
+    height: 100px;
+  }
+
+  20%{
+    left: 0;
+    height: 110px;
+  }
+
+  50% { 
+    top: 200px;
+    left: 100px;
+    height: 120px;
+  } 
+  100%{
+    top: 150px;
+    left: 100px;
+    height: 200px;
+  }
+}
+
+.bg-image {
+    background-image: url("../images/background_1.webp");
+    filter: blur(5px);
+    height: 100%; 
+    width: 100%;
+    margin: auto;
+    background-size: cover;
+    z-index: -1;
+    position: fixed;
+    transform: scale(1.1);
+}
