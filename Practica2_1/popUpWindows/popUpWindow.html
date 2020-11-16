@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/popUp.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/control/popUp.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <table id="tableSummary">
+            <tr>
+                <td colspan="3" id="dataTitle">DNA Analytics - Ismael Collado <span id="data"></span></td>
+            </tr>
+            <tr>
+                <td colspan="3" id="dataTime">Time: <span id="time"></span></td>
+            </tr>
+            <tr>
+                <th>Main analysis for:</th>
+                <th>Chromosome</th>
+                <th>DNA code</th>
+            </tr>
+        </table>
+    
+        <table id="buttons">
+            <tr>
+                <td><input id="close" type="button" value="Close Window" onclick="closePop()"></td>
+                <td><input id="print" type="button" value="Print window" onclick="printPop()"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
