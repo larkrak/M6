@@ -1,38 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- CSS -->
-    <!-- Vendors -->
-    <!-- Jquery -->
-    <script
-			  src="https://code.jquery.com/jquery-3.5.1.js"
-			  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-			  crossorigin="anonymous"></script>
-    <!-- Own Code -->
-    <!-- Model -->
-    <script src="js/model/Person.js"></script>
-    <script src="js/model/Employee.js"></script>
-    <!-- Control -->
-    <script src="js/control/index.js"></script>
-    
-</head>
-<body>
+<html>
+    <head>
+        <title>Document</title>
 
-    <form action="">
-        <fieldset id="myFS">
-            <h1>EMPLOYEE DATABASE</h1>
-            <label for="DNI">DNI: </label><input type="text" id="DNI"><BR></BR>
-            <label for="empName">Name: </label><input type="text" id="empName"><BR></BR>
-            <label for="surname">Surname: </label><input type="text" id="surname"><BR></BR>
-            <label for="phone">Phone: </label><input type="text" id="phone"><BR></BR>
-            <label for="birthdate">Birth Date: </label><input type="date" id="birthdate"><BR></BR>
-            <label for="salary">Salary: </label><input type="text" id="salary" class="currency"><BR></BR>
-            <button type="submit" id="butSubmit">Submit</button>
-        </fieldset>
-    </form>
-    
-</body>
+        <!-- css -->
+
+        <!-- vendors -->
+        <!-- jQuery -->
+        <script
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+        crossorigin="anonymous"></script>
+
+        <!-- Own code -->
+        <!-- Model -->
+        <script src="js/model/Person.js"></script>
+        <script src="js/model/Employee.js"></script>
+
+        <!-- Control -->
+        <script src="js/control/index.js"></script>
+
+        
+
+    </head>
+    <body>
+        <form action="">
+            <fieldset id="myFS">
+                <h1>EMPLOYEE DATABASE</h1>
+                <label for="DNI">DNI: </label><input type="text" id="DNI"><BR></BR>
+                <label for="empName">Name: </label><input type="text" id="empName"><BR></BR>
+                <label for="surname">Surname: </label><input type="text" id="surname"><BR></BR>
+                <label for="phone">Phone: </label><input type="text" id="phone"><BR></BR>
+                <label for="birthdate">Birth Date: </label><input type="date" id="birthdate"><BR></BR>
+                <label for="salary">Salary: </label><input type="text" id="salary" class="currency"><BR></BR>
+                <button type="submit" id="butSubmit">Submit</button>
+            </fieldset>
+        </form>
+    </body>
 </html>

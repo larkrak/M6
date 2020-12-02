@@ -1,35 +1,36 @@
 class Person{
 
-
+    //Properties definition
     _DNI;
     _name;
     _surname;
     _phone;
     _birthdate;
+
 /**
  * Creates an instance of Person.
  * @param {*} pDNI
  * @param {*} pName
  * @param {*} pSurname
  * @param {*} pPhone
- * @param {*} pBirthday
+ * @param {*} pBirthdate
  * @memberof Person
  */
-constructor(pDNI, pName, pSurname, pPhone, pBirthdate){
+constructor(pDNI, pName, pSurname, pPhone, pBirthdate) {
         this._DNI = pDNI;
         this._name = pName;
         this._surname = pSurname;
         this._phone = pPhone;
-        this._pBirthdate = pBirthdate;
+        this._birthdate = pBirthdate;
+	}
 
-    }
 get DNI(){
     return this._DNI;
 }
 
 set DNI(pDNI){
-        this._DNI = pDNI;
-    }
+    this._DNI = pDNI;
+}
 
 get Name(){
     return this._name;
