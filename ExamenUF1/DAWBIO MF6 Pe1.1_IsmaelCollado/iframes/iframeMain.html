@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+		<!--General-->
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="shortcut icon" HREF="images/proven.jpeg"/>
+		<link rel="stylesheet" href="../vendors/bootstrap-4.3.1-dist/css/bootstrap.css">
+		<link rel="stylesheet" href="../css/index.css">
+		<script src="../js/control/iframe.js"></script>
+		<title>Select Products</title>
+
+		
+</head>
+<body>
+
+	<div class="col-lg-6" >
+		<div class="card2 card border-0 px-4 py-5">
+			<div class="row px-3">
+					<h6 class="mb-0 text-sm">Data introduced for the testing type: <span id="service"></span> </h6>	
+			</div>
+
+			<div class="row px-3">
+				<table id="table" class="table">
+					<thead>
+					<tr>
+						<th scope="col">Name</th>
+						<th scope="col">Surname</th>
+						<th scope="col">Extra services price</th>
+					</tr>
+					</thead>
+					<tbody id="tbody">
+					</tbody>
+				</table>
+			</div>	
+			<div class="row mb-3 px-3"> 
+				<button id="confirm" type="submit" class="btn btn-primary" onclick="confirmTable()">Confirm</button> 
+				<button id="cancel" type="button" class="btn btn-danger" onclick="goBack()">Cancel</button> 
+
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+		<!--General-->
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="shortcut icon" HREF="images/companyLogo.jpeg"/>
+		<link rel="stylesheet" href="vendors/bootstrap-4.3.1-dist/css/bootstrap.css">
+		<link rel="stylesheet" href="css/index.css">
+		<script src="js/control/index.js"></script>
+		<title>Biogenetics</title>
+
+	
+</head>
+<body style="background: url(images/fondo.jpg) center no-repeat fixed;">
+	<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+		<div class="card card0 border-0">
+			<div class="row d-flex">
+				<div class="col-lg-6">
+					<div class="card1 pb-5">
+						<div class="row"> <img src="images/companyLogo.jpeg" class="logo"> </div>
+						<div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src="images/biogen.png" class="image"> </div>
+					</div>
+				</div>
+				<div id="clientform" class="col-lg-6">
+					<div class="card2 card border-0 px-4 py-5">
+						<div class="row px-3"> <label class="mb-1">
+								<h6 class="mb-0 text-sm">New client: Select the test</h6>
+							<select id="select" class="form-control">
+								<option value=" Autosomal DNA (atDNA) testing" selected> Autosomal DNA (atDNA) testing</option>
+								<option value="Mitochondrial DNA (mtDNA) testing">Mitochondrial DNA (mtDNA) testing‎ </option>
+								<option value="Y chromosome (Y-DNA) testing">Y chromosome (Y-DNA) testing‎</option>
+							</select><br>
+						</div>
+						<div class="row px-3"> <label class="mb-1">
+							<h6 class="mb-0 text-sm">Introduce the number of clients</h6>
+							<input id="numberclients" type="text" class="form-control" placeholder="1"/><br>
+							
+						</div>
+						<div class="row mb-3 px-3"> <button type="button" id="introduce" class="btn btn-primary" onclick="introduce()">Introduce</button> </div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="card2 card border-0 px-4 py-5">
+						<iframe id="iframe" class="container" src="./iframes/iframeMain.html" frameborder="0" height="600px"></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="bg-blue py-4">
+				<div class="row px-3"> <small class="ml-4 ml-sm-5 mb-2">Copyright &copy; 2020. All rights reserved.</small>
+					<div class="social-contact ml-4 ml-sm-auto"> <span class="fa fa-facebook mr-4 text-sm"></span> <span class="fa fa-google-plus mr-4 text-sm"></span> <span class="fa fa-linkedin mr-4 text-sm"></span> <span class="fa fa-twitter mr-4 mr-sm-5 text-sm"></span> </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

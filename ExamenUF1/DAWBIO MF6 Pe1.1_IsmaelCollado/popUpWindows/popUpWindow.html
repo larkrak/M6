@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+		<!--General-->
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="shortcut icon" HREF="images/proven.jpeg"/>
+		<script src="../js/control/popUpWindow.js"></script>
+		<title>Biogenetics</title>
+
+		<style>
+			#summary{
+				border-collapse: collapse;
+				text-align: left;
+				width: 90%;
+			}
+			#summary tr th{
+				border: 2px solid black;
+				text-align: center;
+			}
+			#summary tr td{
+				border-bottom: 2px solid white;
+				border-top: 2px solid white;
+				text-align: center;
+				width: 150px;
+				padding: 5px;
+			}
+
+			#buttons tr td input{
+				border: none;
+				outline: none;
+				padding: 10px;
+			}
+
+			#close{
+				background-color: #DC3545;
+				border-radius: 2px;
+			}
+			#close:hover{
+				background-color: #d13141;
+				color: white;
+				cursor: pointer;
+			}
+			#print{
+				background-color: #007BFF;
+				border-radius: 2px;
+			}
+			#print:hover{
+				background-color: #016fe4;
+				color: white;
+				cursor: pointer;
+			}
+
+
+		</style>
+
+	
+</head>
+<body style="background-color: #87ab88;" onload="loadData()">
+
+	<h1><span id="service"></span></h1>
+	<p id="time"></p>
+<table id="summary">
+
+	<tr>
+		<th scope="col">Name</th>
+		<th scope="col">Surname</th>
+		<th scope="col">Extra services price</th>
+	</tr>
+</table>
+
+<table id="buttons">
+	<tr>
+		<td><input id="close" type="button" value="Close Window" onclick="closePop()"></td>
+		<td><input id="print" type="button" value="Print window" onclick="printPop()"></td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>
