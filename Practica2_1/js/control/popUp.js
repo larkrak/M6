@@ -1,44 +1,52 @@
 $(document).ready(function(){
 
+    /* Arrays to show the date properly.*/
+
     var d = new Date();
     var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     $("#time").text(days[d.getDay()] + ", " +d.getDate() + " of " + months[d.getMonth()] + " of " + d.getFullYear());
 
 
-    frame = window.opener.document;
+    /* First of all need to select the parent, becouse there is were are the info i need. */
 
-    console.log(frame)
+    frame = window.opener.document;
 
     numChromo = $("#cromoText span", frame).text();
     textDNA = $("#result textarea", frame).val();
 
-    console.log(textDNA)
-
     $("#tableSummary").append($('<tr>').append('<td class="new bordered"><td class="new bordered"><td class="new bordered">'))
 
     collectionNewTd = $(".new");
-    console.log(collectionNewTd.length)
     collectionNewTd[0].innerText = "Chromosome";
     collectionNewTd[1].innerText = numChromo;
     collectionNewTd[2].innerText = textDNA;
 
+
+    /**
+    * @author Ismael Collado
+    * @version 2020/dec
+    * @date 2020/12/02
+    * @listens button
+    * @param none
+    * 
+    */
+
+    $("#close").click(function(){
+        window.close();
+    })
+
+    /**
+    * @author Ismael Collado
+    * @version 2020/dec
+    * @date 2020/12/02
+    * @listens button
+    * @param none
+    * 
+    */
+    
+    $("#print").click(function(){
+        window.print();
+    })
+
 })
-
-function closePop(){
-    var daddy = window.self;
-    daddy.opener = window.self;
-    daddy.close();
-}
-
-/**
-* @author Ismael Collado
-* @version 2020/nov
-* @date 2020/11/10
-* @listens button.onClick
-* @param none
- * 
- */
-function printPop(){
-    window.print();
-}
