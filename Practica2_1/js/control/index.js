@@ -59,6 +59,8 @@ $(document).ready(function(){
     })
 
     $("#back").click(function(){
+        $("#result textarea").val("");
+        
         location.reload();
     })
 
