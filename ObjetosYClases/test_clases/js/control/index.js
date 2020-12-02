@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $("#butSubmit").click(function(event){
+        event.preventDefault();
         var DNI, empName, surname, phone, birthday, salary;
 
         DNI = $("#DNI").val();
@@ -13,5 +14,8 @@ $(document).ready(function(){
              phone, birthday, salary);
         
         console.log(newEmployee);
+        newEmployee.DNI = "CACA0101";
+        console.log(newEmployee.DNI)
+
     });
 });
