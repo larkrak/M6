@@ -1,0 +1,197 @@
+
+html{
+    height: 100%;
+}
+
+body,*{
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#img img{
+  position: absolute;
+  top: 150px;
+  left: 100px;
+  height: 200px;
+  margin:-60px 0 0 -60px;
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 5s linear infinite, come linear 2s;
+  
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+@keyframes come { 
+
+  10%{
+    left: -200px;
+    height: 100px;
+  }
+
+  20%{
+    left: 0;
+    height: 110px;
+  }
+
+  50% { 
+    top: 200px;
+    left: 100px;
+    height: 120px;
+  } 
+  100%{
+    top: 150px;
+    left: 100px;
+    height: 200px;
+  }
+}
+
+.bg-image {
+    background-image: url("../images/background_1.webp");
+    filter: blur(5px);
+    height: 100%; 
+    width: 100%;
+    margin: auto;
+    background-size: cover;
+    z-index: -1;
+    position: fixed;
+    transform: scale(1.1);
+  }
+
+.container{
+    background-color: #C0C0C0;
+    margin: auto;
+    width: 600px;
+    border-radius: 3px;
+}
+
+input:not([type="checkbox"]):focus, select:focus{
+  outline: 1px solid black !important;
+}
+
+
+input[type="checkbox"]{
+  outline: none !important;
+}
+
+#container-form{
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  flex-flow: column wrap; 
+  align-content: flex-start; 
+  background-color: lightgrey;
+  
+}
+
+.submited{
+  width: 600px !important;
+}
+
+#container-form p{
+    font-weight: bold;
+}
+
+#container-form p, #container-form select, #container-form input{
+    width:90%;
+    margin:15px
+}
+
+#container-title{
+    border-radius: 3px;
+    padding: 10px 0px 10px 15px;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 5px;
+    background-color: rgb(70, 70, 70);
+}
+
+#container-form select, #container-form input{
+  width: 95%;
+  padding: 10px 0px 10px 5px;
+  border: none;
+  border-radius: 3px;
+  height: 45px;
+  font-size: 15px;
+  background-color: rgb(70, 70, 70);
+  color: white;
+}
+
+#container-form select:focus, #container-form input:focus{
+  outline: 1px solid #0088a9;
+}
+
+#container-form input[type="button"]{
+  transition: 0.3s ease all;
+}
+
+#container-form input[type="button"]:hover{
+  background-color: #0088a9;
+  cursor: pointer;
+}
+
+#container-form table{
+  width: 90%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+#container-form table th{
+  text-align: left;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+#container-form th:nth-child(1), #container-form th:nth-child(2), .bordered td:nth-child(1),.bordered td:nth-child(2){
+  width: 30%;
+}
+
+#container-form th:nth-child(3), .bordered td:nth-child(3){
+  width: 10%;
+}
+
+.submited{
+  opacity: 1;
+  visibility: visible;
+  transition: 1s ease all;
+}
+
+.bordered td{
+  border-top: 2px solid white;
+  padding-top: 5px;
+}
+
+#confirmButtons{
+  display: flex; flex-direction: row; width: 100%; justify-content: space-between; 
+  width: 90%;
+}
+#confirmButtons input:nth-child(1){
+  width: 60%; 
+  background-color: #0088a9;
+}
+#confirmButtons input:nth-child(1):hover{
+  width: 60%; 
+  background-color: #0087a988;
+}
+
+#confirmButtons input:nth-child(2){
+  background-color: rgba(247, 51, 51);
+  width: 20%;
+}
+
+#confirmButtons input:nth-child(2):hover{
+  background-color: rgb(175, 37, 37);
+  color: white;
+
+}
+
+
