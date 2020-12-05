@@ -4,18 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Js files -->
     <script src="../js/control/popUpWindow.js"></script>
+    <script src="../js/control/index.js"></script>
     <!-- Css files -->
+    <link rel="stylesheet" href="../css/popUp.css">
     <title>Document</title>
 </head>
-<body onload="loadData()">
-    <h3>Data introduced for the property type: <b id="propertyType"></b></h3>
-    <label for="">Your name: </label><p id="name"></p>
-    <table id="tableClients">
-        <tr>
-            <th>Property Type</th>
-        </tr>
-    </table>
+<body >
+
+    <div>
+        <table id="tableSummary">
+            <tr>
+                <td colspan="3" id="dataTitle">Data introduced for the property type: <span id="propertyType"></span></td>
+            </tr>
+            <tr>
+                <td colspan="3" id="dataTime">Time: <span id="time"></span></td>
+            </tr>
+            <tr>
+                <th>Product name</th>
+                <th>Code</th>
+                <th>Tested</th>
+            </tr>
+        </table>
+    
+        <table id="buttons">
+            <tr>
+                <th id="total">Total products introduced in the data base: <span id="spanTotal"></span></th>
+            </tr>
+            <tr>
+                <td><input id="close" type="button" value="Close Window" onclick="closePop()"></td>
+                <td><input id="print" type="button" value="Print window" onclick="printPop()"></td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>

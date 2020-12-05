@@ -1,149 +1,128 @@
+$(document).ready(function(){
 
-/**
-* @author Ismael Collado
-* @see back
-* @version 2020/nov
-* @date 2020/11/10
-* @listens window.onload
-* @param none
-*/
+    $(".enviar").click(function(){
 
-window.onload = function () {
+        //As im clicking the button inside the first div, i can call his parent to get the container.
+        //Need to get the number introduced and the selected option. ill need that to create the object
+        firstContainer = $(this).parent();
+        numberOfInputs = $("#productsNumber").val()
+        productId = $("#optionSelect").val()
+        productName = $("#optionSelect option:selected").text().split(" ")[0];
+        // Object created for that type.
+        productType = new ProductType(productId, productName); // OBJECT PRODUCTTYPE
+        secondContainer = $(".container-form")[1];
 
-    divSubmited = document.getElementsByClassName("submited");
-    divSubmited = divSubmited[0];
-    divSubmited.style.display = "none";
-
-}
-
-function submited() {
-
-    document.getElementsByClassName("container")[0].style.display = "none";
-    productN = document.getElementById("productsNumber").value;
-    document.getElementsByClassName("submited")[0].style.display = "flex";
-
-    $(".submited", document).css({ opacity: 0.0, visibility: "visible" }).animate({ opacity: 1.0 })
-
-    select = document.getElementById("optionSelect");
-    table = document.getElementById("contentTable");
-
-    if (select.value != 1 && !isNaN(productN) || productN == "") {
-
-        if(productN == ""){
-            goBack();
-        }
-
-        selectText = select.options[select.selectedIndex].text;
-        document.getElementById("resultSelectP").textContent = selectText;
-
-        tableLenght = table.rows.lenght;
-
-        for (let index = 0; index < productN; index++) {
+        if(numberOfInputs.length != 0 && numberOfInputs != 0 && !isNaN(numberOfInputs)){
+            $("#resultSelectP").text(productType.Type)
+            $("#productsNumber").val("")
+            $("#productsNumber").css("background-color", "#464646");
+            firstContainer.css("display","none");
+            $(secondContainer).removeClass("hidden");
+            $(secondContainer).css({ opacity: 0.0, visibility: "visible" }).animate({ opacity: 1.0 })
             
-            tableLenght = table.rows.lenght;
-            newRow = table.insertRow(tableLenght);
-            newRow.className = "bordered";
-            cell1 = newRow.insertCell(0);
-            cell2 = newRow.insertCell(1);
-            cell3 = newRow.insertCell(2);
-            cell1.innerHTML = '<td><input type="text" id="specie'+index+'" placeholder="Specie here"></td> ';
-            cell2.innerHTML = '<td><input type="text" id="code'+index+'" placeholder="'+selectText+'"></td>';
-            cell3.innerHTML = '<td><input type="checkbox"></td>';
-        }
-
-        $("input:checkbox", document).each(function () {
-
-            random = Math.floor((Math.random() * 10) + 1);
-
-            if (random >= 5) {
-                $(this).prop('checked', true)
-            } else {
-                $(this).prop('checked', false)
+            for (let index = 0; index < numberOfInputs; index++) {
+                $('#contentTable').append('<tr class="newtr"><td><input type="text" placeholder="Specie here" value=""></td><td><input class="sequence" type="text" placeholder="'+$("#optionSelect option:selected").text()+'" value=""></td><td><input type="checkbox"></td></tr>');
             }
-        })
-    }else{
-        goBack();
-    }
-}
+            $("#addData").click(function(){
+                contValidInputs = 0;
+                productsArray = []
+                inputsTable = $("#contentTable input[type='text']");
+                for (let index = 0; index < inputsTable.length; index++) { 
 
-/**
-* @author Ismael Collado
-* @see back
-* @version 2020/nov
-* @date 2020/11/10
-* @listens button.goBack
-* @param none
- * 
- */
-function goBack(){
+                    if(inputsTable.eq(index).hasClass("sequence")){
+                        $.fn.validSequence(inputsTable.eq(index).val(), productType.Type)? (inputsTable.eq(index).css("background-color", "#464646"), contValidInputs += 1): inputsTable.eq(index).css("background-color", "#df4747ff")
 
-    location.reload();
+                    }else{
+                        inputsTable.eq(index).val() == "" || !$.fn.validInput(inputsTable.eq(index)) ? inputsTable.eq(index).css("background-color", "#df4747ff") : (inputsTable.eq(index).css("background-color", "#464646"), contValidInputs += 1)
+                    }
+                }
 
-}
+                if(contValidInputs == inputsTable.length){
 
-/**
-* @author Ismael Collado
-* @see back
-* @version 2020/nov
-* @date 2020/11/10
-* @listens button.popUpWindow
-* @param none
- * 
- */
+                    $("#contentTable tr.newtr").each(function(){
+                        object = []
+                        $.each(this.cells, function(){
+                            var d = new Date(); // for now
+                            var month = d.getMonth()+1
+                            date=d.getFullYear()+"/"+month+"/"+d.getDate()+" - "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+                            $(this).find("input").attr('type') == 'text' ? object.push($(this).find("input").val()) : object.push($(this).find("input").is(':checked'))
+                        });
+                        productsArray.push(new Product(productId, productName, object[0], object[1], object[2], date))
+                    })
 
-function popUpWindow(){
+                    var decision = confirm("Do you really want to introduce the data?");
 
-    table = document.getElementById("contentTable");
+                    if (decision){
+                        var w = window.open("popUpWindows/popUpWindow.html", "_blank", "width=800px, height=300px");
+                        w.TypeProduct = productType;
+                        w.ProductsArray = productsArray
+                    }
+                }
+                //console.log(productsArray)
+            })
 
-    len = table.rows.length
-    flag = true;
-    
-    for (let index = 0; index < (len - 1); index++) {
-        ids= "specie"+index
-        code = "code"+index
+            $("#goBack").click(function(){
 
-        inpS = document.getElementById(ids).value
-        codeP = document.getElementById(code).value
+                inputsTable = $("#contentTable input[type='text']");
+                $('#contentTable tr.newtr').remove()
 
+                for (let index = 0; index < inputsTable.length; index++) {
+                    inputsTable.eq(index).val("")
+                }
 
-        if((inpS == "") || !isNaN(inpS) || flag == false || codeP === "" ){
-            alert("Found invalid values")
-            flag = false
-            break;
+                firstContainer.css("display","flex");
+                firstContainer.css({ opacity: 0.0, visibility: "visible" }).animate({ opacity: 1.0 })
+                $(secondContainer).addClass("hidden")
+
+            })
+
+        }else{
+            $("#productsNumber").css("background-color", "#df4747ff")
         }
-        
+    })
 
-        for (let index = 0; index < codeP.length; index++) {
+    $.fn.validSequence = function (sequence, type) {
 
-            if(codeP[index] == 'c' || codeP[index] == 'a' || codeP[index] == 'u' || codeP[index] == 't'){
-                flag = true;
-            }else{
-                flag = false;
+        arrDNA = ["A", "C", "G", "T", "a", "c", "g", "t"];
+        arrRNA = ["A", "C", "G", "U", "a", "c", "g", "u"];
+
+        ret = true;
+
+        if(sequence != 0){
+            for (let index = 0; index < sequence.length; index++) {
+                if(type == 'DNA'){
+                    ret = $.inArray(sequence[index], arrDNA) != -1? true : false;
+                    if(!ret) break;
+                }
+                if(type == "RNA"){
+                    ret = $.inArray(sequence[index], arrRNA) != -1? true : false;
+                    if(!ret) break;
+                }
+            }
+        }else{
+            ret = false;
+        }
+        return ret;
+    };
+
+    $.fn.validInput = function(input){
+
+        arr = input.val();
+        ret = true;
+
+        for (let index = 0; index < arr.length; index++) {
+            if($.isNumeric(arr[index])){
+                ret = false;
+                break;
+            }
+            if(/^[a-zA-Z- ]*$/.test(arr[index]) == false) {
+                ret = false;
                 break;
             }
         }
+        return ret;
     }
 
-    if(flag == true){
-        var decision = confirm("Do you really want to introduce the data?");
+    //console.log($.fn.checkSequence("u", "RNA"))
 
-        //No se porque, pero me estaba dando problemas la ruta relativa y he tenido que poner la absoluta. 
-
-        if (decision){
-            window.open("http://localhost/M6/Practica2/popUpWindows/dataSummary.html", "_blank", "width=800px, height=300px");
-        }
-    }
-
-    
-}
-$(document).ready(function(){
-
-    $("#img img").mouseenter(function(){
-        $(this).animate({ height: "240px" })
-    })
-    $("#img img").mouseout(function(){
-        $(this).animate({ height: "200px" })
-    })
-
-    
-});
+})
