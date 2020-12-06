@@ -20,20 +20,19 @@ $(document).ready(function(){
     $("#time").text(days[d.getDay()] + ", " +d.getDate() + " of " + months[d.getMonth()] + " of " + d.getFullYear())
     $("#propertyType").text(productType.Type)
 
+    $.each(productsArray, function(key, element) {
+        $("#tableSummary").append("<tr><td>"+element.Name+"</td><td>"+element.Code+"</td><td>"+element.Tested+"</td></tr>");
+    });
 
-    console.log(productsArray)
-    size = Object.getOwnPropertyNames(productsArray[index]).length;
-    for (let index = 0; index < productsArray.length; index++) {
-        
-        $("#tableSummary").append("<tr>");
-        for (let index = 0; index < size; index++) {
-            
-            
-        }
+    $("#tableSummary td:contains('true')").css("color", "green")
+    $("#tableSummary td:contains('false')").css("color", "red")
 
-    }
+    $("#close").click(function(){
+        window.close();
+    })
 
-
-
+    $("#print").click(function(){
+        window.print();
+    })
 
 })
