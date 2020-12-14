@@ -50,7 +50,6 @@ $(document).ready(function () {
             for (let index = 0; index < numberOfInputs; index++) {
                 $('#contentTable').append('<tr class="newtr"><td><input type="text" placeholder="Specie here" value=""></td><td><input class="sequence" type="text" placeholder="' + $("#optionSelect option:selected").text() + '" value=""></td><td><input type="checkbox"></td></tr>');
             }
-
             // Before introducing data to de database, i need to check the introduced values
             // First of all need a counter to determinate the number of VALID introduced values. 
             // If that number is different from the number of inputs introduced by the user,
@@ -174,8 +173,7 @@ $(document).ready(function () {
         }
         return ret;
     };
-
-
+ 
     /**
      * Checking an input value.
      * @author Ismael Collado
