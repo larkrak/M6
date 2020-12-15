@@ -105,7 +105,9 @@ $(document).ready(function () {
                         // and i can just push with 0, 1 and 2. The object array is always getting 3 values. 
                         // That array is always overwriting so i can always access to 0, 1 and 2.
                         // Just push that values to the array ill send to the popUp.
-                        productsArray.push(new Product(productId, productName, object[0], object[1], object[2], date))
+                        //productsArray.push(new Product(productId, productName, object[0], object[1], object[2], date))
+                        console.log(object)
+                        productsArray.push(new Product(object[0], object[1], object[2], date, productType))
                     })
 
                     var w = window.open("popUpWindows/popUpWindow.html", "_blank", "width=800px, height=300px");

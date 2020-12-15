@@ -5,7 +5,7 @@
  * @class Product
  * @extends ProductType
  */
-class Product extends ProductType {
+class Product {
     _name;
     _code;
     _tested;
@@ -22,9 +22,9 @@ class Product extends ProductType {
  * @param  {Date} pEntryDate 
  * @memberof Product
  */
-constructor(pID, pType, pName, pCode, pTested, pEntryDate) {
-        super(pID, pType);
-
+constructor(pName, pCode, pTested, pEntryDate, pProductType) {
+        //super(pID, pType);
+        this.ProductType = pProductType;
         this._name = pName;
         this._code = pCode;
         this._tested = pTested;

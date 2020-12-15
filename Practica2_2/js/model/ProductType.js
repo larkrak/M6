@@ -6,7 +6,6 @@
  * @class ProductType
  */
 class ProductType{
-
     //Properties definition
     _ID;
     _type;

@@ -23,6 +23,8 @@ $(document).ready(function () {
     // For each element inside the introduced array, ill add a tr, calling them
     // attributes.
 
+    console.log(productsArray)
+
     $.each(productsArray, function (key, element) {
         $("#tableSummary").append("<tr><td>" + element.Name + "</td><td>" + element.Code + "</td><td>" + element.Tested + "</td></tr>");
     });
