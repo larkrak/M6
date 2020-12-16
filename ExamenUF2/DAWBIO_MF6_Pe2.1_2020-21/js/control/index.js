@@ -43,7 +43,7 @@ $(document).ready(function(){
         illnessObj = new Illness(contId, $(this).text())
         
         $("#illnessText").text(illnessObj.Name)
-
+        $("#select-form").html("")
         for (let index = 0; index < analysisTypeNamesArray.length; index++) {
             
             //Generating the select with the array values generated previously
