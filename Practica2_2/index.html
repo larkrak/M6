@@ -1,52 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./js/control/index.js"></script>
+    <!-- css -->
     <link rel="stylesheet" href="css/index.css">
+    <!-- vendors -->
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Own code -->
+    <!-- Model -->
+    <script src="./js/model/ProductType.js"></script>
+    <script src="./js/model/Product.js"></script>
+    <!-- Control -->
+    <script src="./js/control/index.js"></script>
     
+
     <title>Practica2</title>
 </head>
+
 <body>
-
-    <!-- En el index solo tengo la iamgen que uso para el fondo y el iframe -->
-
+    <!-- My logo -->
     <div id="img">
-        <img src="images/logo.png"> 
+        <img src="images/logo.png">
     </div>
-
+    <!-- My background -->
     <div class="bg-image"></div>
-
-    <div id="container-form">
-        <h2 id="container-title">Select product <span id="resultSelect"></span></h2>
+    <!-- First container, where i need to introduce the data 
+            type and number of products -->
+    <div class="container-form">
+        <h2 class="container-title">Select product</h2>
         <p>Introduce the product</p>
         <select id="optionSelect">
-            <option value="1">Select one:</option>
-            <option value="2">DNA Code</option>
+            <option value="1">DNA Code</option>
+            <option value="2">RNA Code</option>
             <option value="3">Protein Code</option>
         </select>
         <p>Introduce the number of products</p>
         <input type="text" id="productsNumber" placeholder="e.g: 1">
-        <input class="enviar" type="button" value="Submit" onclick="submited()">
+        <input class="sendData" type="button" value="Submit">
     </div>
-
-    <div id="container-form2" class="submited">
-        <h2 id="container-title">Enter product for category -> <span id="resultSelectP"></span> <- </h2>
-
-        <table id="contentTable">
-            <tr>
-                <th>Product name</th>
-                <th>Code</th>
-                <th>Tested</th>
-            </tr>
-        </table>
-        <div id="confirmButtons">
-            <input type="button" value="Add to the data base" onclick="popUpWindow()">
-            <input type="button" value="Cancel" id="back" onclick="goBack()">
-        </div>
+    <!-- Second container. This one is hidden till i click the previous button. -->
+    <div class="container-form hidden" class="submited">
+        <h2 class="container-title">Enter product for category -> <span id="resultSelectP"></span>
+            <- code </h2>
+                <!-- Table where ill print the inputs selected by the user
+                previously -->
+                <table id="contentTable">
+                    <tr>
+                        <th>Product name</th>
+                        <th>Code</th>
+                        <th>Tested</th>
+                    </tr>
+                </table>
+                <!-- Confirmation button or cancel. -->
+                <div id="confirmButtons">
+                    <input id="addData" type="button" value="Add to the data base">
+                    <input id="goBack" type="button" value="Cancel">
+                </div>
     </div>
 </body>
+
 </html>

@@ -1,74 +1,59 @@
 
 /**
 * @author Ismael Collado
-* @version 2020/nov
-* @date 2020/11/10
-* @listens body.onLoad
+* @version 2020/dec
+* @date 2020/12/14
 * @param none
- * 
- */
+*
+*/
 
-function loadData(){
+$(document).ready(function () {
 
-    frame = window.opener.document;
-    table = frame.getElementById("contentTable");
-    tableSummary = document.getElementById("tableSummary");
-    document.getElementById("data").innerText = frame.getElementById("resultSelectP").innerText;
-    document.getElementById("spanTotal").innerText = (table.rows.length) - 1
-    
+    productsArray = window.ProductsArray;
+    productType = window.TypeProduct;
+
+    parent = window.opener.document;
+    // Generating the date to show it in the table
     var d = new Date();
-    var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    document.getElementById("time").innerHTML = days[d.getDay()] + ", " +d.getDate() + " of " + months[d.getMonth()] + " of " + d.getFullYear();
+    $("#time").text(days[d.getDay()] + ", " + d.getDate() + " of " + months[d.getMonth()] + " of " + d.getFullYear())
+    $("#propertyType").text(productType.Type)
 
-    for (let index = 3; index < (table.rows.length)+2; index++) {
-        
-        newRow = document.getElementById("tableSummary").insertRow()
-        newRow.classList.add("bordered")
-        newRow.insertCell(0)
-        newRow.insertCell(1)
-        newRow.insertCell(2)
+    // For each element inside the introduced array, ill add a tr, calling them
+    // attributes.
 
-        for (let c = 0; c < 3; c++) {
+    console.log(productsArray)
 
-            contentForEachTD = table.rows[index-2].cells[c].childNodes[0];
-            if(contentForEachTD.type == 'text'){
-                tableSummary.rows[index].cells[c].innerText = contentForEachTD.value;
-            }else{
-                if(contentForEachTD.checked == false){
-                    tableSummary.rows[index].cells[c].classList.add("red")
-                }else{
-                    tableSummary.rows[index].cells[c].classList.add("green")
-                }
-                tableSummary.rows[index].cells[c].innerText = contentForEachTD.checked;
-            }   
-        }
-    }
-}
+    $.each(productsArray, function (key, element) {
+        $("#tableSummary").append("<tr><td>" + element.Name + "</td><td>" + element.Code + "</td><td>" + element.Tested + "</td></tr>");
+    });
 
-/**
-* @author Ismael Collado
-* @version 2020/nov
-* @date 2020/11/10
-* @listens button.onClick
-* @param none
- * 
- */
+    //Now i find td with true and false to paint them
 
-function closePop(){
-    var daddy = window.self;
-    daddy.opener = window.self;
-    daddy.close();
-}
+    $("#tableSummary td:contains('true')").css("color", "green")
+    $("#tableSummary td:contains('false')").css("color", "red")
 
-/**
-* @author Ismael Collado
-* @version 2020/nov
-* @date 2020/11/10
-* @listens button.onClick
-* @param none
- * 
- */
-function printPop(){
-    window.print();
-}
+    /**
+     * Closing the window
+     * @author Ismael Collado
+     * @param {none} 
+     * @returns {void}
+     */
+
+    $("#close").click(function () {
+        window.close();
+    })
+
+    /**
+     * Printing the window
+     * @author Ismael Collado
+     * @param {none} 
+     * @returns {void}
+     */
+
+    $("#print").click(function () {
+        window.print();
+    })
+
+})

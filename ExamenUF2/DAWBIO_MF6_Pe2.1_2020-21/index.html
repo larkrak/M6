@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>DNA Analysis</title>
+  <link rel="shortcut icon" HREF="images/companyLogo.jpeg"/>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <!-- Jquery -->
+  <script src="vendors/jquery/js/jquery-3.3.1.min.js"></script>
+  <!-- Model -->
+  <script src="./js/model/Illness.js"></script>
+  <script src="./js/model/Patient.js"></script>
+  <script src="./js/model/AnalysisType.js"></script>
+  <!-- My script -->
+  <script src="./js/control/index.js"></script>
+
+ 
+</head>
+<body style="background: url(images/fondo.jpg) center no-repeat fixed;background-size: cover"
+class="container">
+  <div id="mainMenu" class="container well">
+    <h1>DNA researches</h1>
+    <div id="mainOptions" class="form-horizontal">
+      <a href="#">New research</a>
+      <span>  --  </span>
+      <a href="#">List ongoing researches</a>
+    </div>
+
+  </div>
+  <div id="illnessOptions" class="container well first-hidden">
+	  <h5></h5>
+  </div>
+
+  <div class="form-horizontal second-hidden">
+    <nav class="navbar navbar-default">
+    	<div class="container-fluid">
+    		<div class="navbar-header">
+    			<span class="navbar-brand">
+    					<b>DNA Analytic for <span id="illnessText"></span> </b>
+    			</span>
+    		</div>
+    	</div>
+    </nav>
+
+    <div class="navbar navbar-default third-hidden">
+    	<div class="container-fluid">
+    		<table class="table table-hover">
+    			<tbody>
+    				<tr>
+    					<td><b>Analysis Type *</b></td>
+    					<td>
+    						<select id="select-form" class="form-control" >
+    						</select>
+    					</td>
+    				</tr>
+    				<tr>
+    					<td><b>Full Name *</b></td>
+    					<td><input id="fname" class="form-control" type="text" /></td>
+    				</tr>
+    				<tr>
+    					<td><b>DNA code *</b></td>
+    					<td>
+    						<textarea id="sequence" class="form-control" type="text" required ></textarea>
+    					</td>
+    				</tr>
+    				<tr>
+    					<td><b>Age *</b></td>
+    					<td><input id="age" class="form-control" type="number" /></td>
+    				</tr>
+    				<tr>
+    					<td>
+    						<button type="button" class="btn btn-success" >Register Research</button>
+    						<button type="button" class="btn btn-primary" id="back" >Back</button>
+    					</td>
+    				</tr>
+    			</tbody>
+    		</table>
+    	</div>
+    </div>
+  </div>
+  <br/><br/>
+
+</body>
+</html>

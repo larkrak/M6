@@ -67,46 +67,41 @@ body{
     transform: scale(1.1);
   }
 
-.container{
-    background-color: #C0C0C0;
-    margin: auto;
-    width: 600px;
-    border-radius: 3px;
-}
-
 input:not([type="checkbox"]):focus, select:focus{
   outline: 1px solid black !important;
 }
-
 
 input[type="checkbox"]{
   outline: none !important;
 }
 
-#container-form{
+.container-form{
   display: flex;
   flex-direction: column;
   width: 600px;
   flex-flow: column wrap; 
   align-content: flex-start; 
-  background-color: lightgrey;
-  
+  background-color: lightgrey; 
+}
+
+.hidden{
+  display: none;
 }
 
 .submited{
   width: 600px !important;
 }
 
-#container-form p{
+.container-form p{
     font-weight: bold;
 }
 
-#container-form p, #container-form select, #container-form input{
+.container-form p, .container-form select, .container-form input{
     width:90%;
     margin:15px
 }
 
-#container-title{
+.container-title{
     border-radius: 3px;
     padding: 10px 0px 10px 15px;
     color: white;
@@ -116,7 +111,7 @@ input[type="checkbox"]{
     background-color: rgb(70, 70, 70);
 }
 
-#container-form select, #container-form input{
+.container-form select, .container-form input{
   width: 95%;
   padding: 10px 0px 10px 5px;
   border: none;
@@ -127,35 +122,35 @@ input[type="checkbox"]{
   color: white;
 }
 
-#container-form select:focus, #container-form input:focus{
+.container-form select:focus, .container-form input:focus{
   outline: 1px solid #0088a9;
 }
 
-#container-form input[type="button"]{
+.container-form input[type="button"]{
   transition: 0.3s ease all;
 }
 
-#container-form input[type="button"]:hover{
+.container-form input[type="button"]:hover{
   background-color: #0088a9;
   cursor: pointer;
 }
 
-#container-form table{
+.container-form table{
   width: 90%;
   margin-top: 20px;
   border-collapse: collapse;
 }
 
-#container-form table th{
+.container-form table th{
   text-align: left;
   padding-left: 20px;
   padding-bottom: 20px;
 }
-#container-form th:nth-child(1), #container-form th:nth-child(2), .bordered td:nth-child(1),.bordered td:nth-child(2){
+.container-form th:nth-child(1), .container-form th:nth-child(2), .bordered td:nth-child(1),.bordered td:nth-child(2){
   width: 30%;
 }
 
-#container-form th:nth-child(3), .bordered td:nth-child(3){
+.container-form th:nth-child(3), .bordered td:nth-child(3){
   width: 10%;
 }
 
